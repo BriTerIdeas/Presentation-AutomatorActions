@@ -10,6 +10,14 @@
 
 #import "StringProcessor.h"
 
+#define kSelectedSegmentIndexKey            @"com.briterideas.selectedSegmentIndex"
+
+@interface LineNumberService ()
+
+@property (nonatomic, weak) IBOutlet NSSegmentedControl *spacesSegmentedControl;
+
+@end
+
 @implementation LineNumberService
 
 - (id)runWithInput:(id)input
@@ -19,6 +27,9 @@
     {
         return input;
     }
+    
+    NSInteger selectedIndex = [[[self parameters] objectForKey:kSelectedSegmentIndexKey] integerValue];
+    NSInteger numberOfSpaces = selectedIndex + 1;
     
     NSArray *inputArray = (NSArray *)input;
     NSMutableArray *outputArray = [NSMutableArray array];
@@ -33,7 +44,7 @@
         }
         
         NSString *inputString = (NSString *)inputObject;
-        NSString *outputString = [StringProcessor formattedOutputFromInput:inputString];
+        NSString *outputString = [StringProcessor formattedOutputFromInput:inputString numberOfSpaces:numberOfSpaces];
         
         if (outputString != nil)
         {
@@ -46,6 +57,48 @@
     }
     
     return outputArray;
+}
+
+- (void)opened
+{
+    NSLog(@">>> Entering <%p> %s <<<", self, __PRETTY_FUNCTION__);
+    
+    NSMutableDictionary *parameters = [self parameters];
+    
+    if ([parameters objectForKey:kSelectedSegmentIndexKey] == nil)
+    {
+        [parameters setObject:@2 forKey:kSelectedSegmentIndexKey];
+    }
+    
+    [self parametersUpdated];
+    
+    [super opened];
+    
+    NSLog(@"<<< Leaving  <%p> %s >>>", self, __PRETTY_FUNCTION__);
+}
+
+- (void)updateParameters
+{
+    NSLog(@">>> Entering <%p> %s <<<", self, __PRETTY_FUNCTION__);
+    
+    NSMutableDictionary *parameters = [self parameters];
+
+    [parameters setObject:@([[self spacesSegmentedControl] selectedSegment]) forKey:kSelectedSegmentIndexKey];
+    
+    NSLog(@"<<< Leaving  <%p> %s >>>", self, __PRETTY_FUNCTION__);
+}
+
+- (void)parametersUpdated
+{
+    NSLog(@">>> Entering <%p> %s <<<", self, __PRETTY_FUNCTION__);
+    
+    NSMutableDictionary *parameters = [self parameters];
+    
+    NSInteger selectedIndex = [[parameters objectForKey:kSelectedSegmentIndexKey] integerValue];
+    
+    [[self spacesSegmentedControl] setSelectedSegment:selectedIndex];
+    
+    NSLog(@"<<< Leaving  <%p> %s >>>", self, __PRETTY_FUNCTION__);
 }
 
 @end

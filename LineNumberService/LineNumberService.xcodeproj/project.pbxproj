@@ -28,6 +28,7 @@
 		362B6CEA1922EF9500384D51 /* test1output.txt in Resources */ = {isa = PBXBuildFile; fileRef = 362B6CE91922EF9500384D51 /* test1output.txt */; };
 		362B6CEC1922EFB600384D51 /* test2input-LeftJustifyText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 362B6CEB1922EFB600384D51 /* test2input-LeftJustifyText.txt */; };
 		362B6CEE1922F01F00384D51 /* test2output.txt in Resources */ = {isa = PBXBuildFile; fileRef = 362B6CED1922F01F00384D51 /* test2output.txt */; };
+		3641300B19269BA2006DC731 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3641300A19269BA2006DC731 /* main.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		362B6CE91922EF9500384D51 /* test1output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test1output.txt; sourceTree = "<group>"; };
 		362B6CEB1922EFB600384D51 /* test2input-LeftJustifyText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test2input-LeftJustifyText.txt"; sourceTree = "<group>"; };
 		362B6CED1922F01F00384D51 /* test2output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2output.txt; sourceTree = "<group>"; };
+		3641300A19269BA2006DC731 /* main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				362B6CA21922BE4F00384D51 /* LineNumberService.h */,
 				362B6CA31922BE4F00384D51 /* LineNumberService.m */,
+				3641300A19269BA2006DC731 /* main.xib */,
 				362B6C9D1922BE4F00384D51 /* Supporting Files */,
 			);
 			path = LineNumberService;
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3641300B19269BA2006DC731 /* main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +628,7 @@
 				362B6CAD1922BE4F00384D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		362B6CDE1922C3EF00384D51 /* Build configuration list for PBXNativeTarget "LineNumberApp" */ = {
 			isa = XCConfigurationList;
@@ -632,6 +637,7 @@
 				362B6CE01922C3EF00384D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		362B6CE11922C3EF00384D51 /* Build configuration list for PBXNativeTarget "LineNumberAppTests" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +646,7 @@
 				362B6CE31922C3EF00384D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

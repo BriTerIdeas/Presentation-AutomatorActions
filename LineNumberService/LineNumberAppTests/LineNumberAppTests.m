@@ -38,7 +38,7 @@
 	NSString *inputString = [[NSString alloc] initWithContentsOfURL:inputURL encoding:NSUTF8StringEncoding error:nil];
     NSString *outputStringReference = [[NSString alloc] initWithContentsOfURL:outputURL encoding:NSUTF8StringEncoding error:nil];
     
-	NSString *outputString = [StringProcessor formattedOutputFromInput:inputString];
+	NSString *outputString = [StringProcessor formattedOutputFromInput:inputString numberOfSpaces:3];
     
     XCTAssertEqualObjects(outputString, outputStringReference, @"Line numbers should have been added");
 }
@@ -54,7 +54,7 @@
 	NSString *inputString = [[NSString alloc] initWithContentsOfURL:inputURL encoding:NSUTF8StringEncoding error:nil];
     NSString *outputStringReference = [[NSString alloc] initWithContentsOfURL:outputURL encoding:NSUTF8StringEncoding error:nil];
     
-	NSString *outputString = [StringProcessor formattedOutputFromInput:inputString];
+	NSString *outputString = [StringProcessor formattedOutputFromInput:inputString numberOfSpaces:3];
     
     XCTAssertEqualObjects(outputString, outputStringReference, @"Text should be left justified");
 }

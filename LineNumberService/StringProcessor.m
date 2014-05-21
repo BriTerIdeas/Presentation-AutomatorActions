@@ -11,6 +11,7 @@
 @implementation StringProcessor
 
 + (NSString *)formattedOutputFromInput:(NSString *)inputString
+                        numberOfSpaces:(NSInteger)numberOfSpaces;
 {
     if ([inputString length] == 0)
     {
@@ -19,6 +20,14 @@
     
     NSArray *inputLines = [inputString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     __block NSMutableArray *outputLines = [NSMutableArray array];
+    
+    NSString *whitespace = @"";
+    while ([whitespace length] < numberOfSpaces)
+    {
+        whitespace = [whitespace stringByAppendingString:@" "];
+    }
+    NSString *longestLineNumber = [NSString stringWithFormat:@"%ld.%@", [outputLines count], whitespace];
+    NSInteger maxPrefixLength = [longestLineNumber length];
     
     [inputLines enumerateObjectsUsingBlock:^(NSString *originalLine, NSUInteger index, BOOL *stop) {
         
@@ -31,7 +40,7 @@
         
         NSString *prefix = [NSString stringWithFormat:@"%ld. ", index + 1];
         
-        while ([prefix length] < 5)
+        while ([prefix length] < maxPrefixLength)
         {
             prefix = [prefix stringByAppendingString:@" "];
         }

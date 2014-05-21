@@ -10,6 +10,6 @@
 
 @interface StringProcessor : NSObject
 
-+ (NSString *)formattedOutputFromInput:(NSString *)inputString;
++ (NSString *)formattedOutputFromInput:(NSString *)inputString numberOfSpaces:(NSInteger)numberOfSpaces;
 
 @end

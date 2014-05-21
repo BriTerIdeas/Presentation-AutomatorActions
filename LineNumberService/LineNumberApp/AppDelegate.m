@@ -22,7 +22,7 @@
     
 	NSLog(@"\ninput:\n-----\n%@\n-----", inputString);
     
-    NSString *outputString = [StringProcessor formattedOutputFromInput:inputString];
+    NSString *outputString = [StringProcessor formattedOutputFromInput:inputString numberOfSpaces:2];
     
 	NSLog(@"\nfinal output:\n-----\n%@\n-----", outputString);
 }

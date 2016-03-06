@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 BriTer Ideas LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface StringProcessor : NSObject
 

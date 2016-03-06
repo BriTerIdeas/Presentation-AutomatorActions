@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 BriTer Ideas LLC. All rights reserved.
 //
 
+@import AppKit;
 #import "LineNumberService.h"
 
 #import "StringProcessor.h"
